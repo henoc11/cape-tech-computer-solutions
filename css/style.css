@@ -1281,20 +1281,86 @@ p {
     }
 
 }
-/* Burger menu hidden on desktop */
+/* =========================================
+   PART 3: RESPONSIVE BURGER MENU
+   ========================================= */
+
+/* Hide the burger button on desktop */
 .menu-toggle {
     display: none;
 }
 
-/* Show burger menu on mobile */
+/* Mobile navigation */
 @media (max-width: 768px) {
+
+    .site-nav {
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 15px 0;
+    }
+
+    /* Display the burger button on mobile */
     .menu-toggle {
         display: block;
         margin-left: auto;
+        padding: 5px 10px;
         background: none;
         border: none;
+        color: var(--heading-color);
         font-size: 28px;
-        color: #0b1f3a;
         cursor: pointer;
+    }
+
+    /* Hide navigation links until the button is clicked */
+    .nav-list {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        margin-top: 10px;
+    }
+
+    /* Show links when JavaScript adds is-open */
+    .nav-list.is-open {
+        display: flex;
+    }
+
+    .nav-list .nav-link {
+        display: block;
+        width: 100%;
+        padding: 10px 14px;
+        text-align: center;
+    }
+}
+/* =========================================
+   PART 3: RESPONSIVE GOOGLE MAP
+   ========================================= */
+
+.map-container {
+    width: 92%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+}
+
+.map-container iframe {
+    display: block;
+    width: 100%;
+    min-height: 350px;
+    border: 0;
+}
+
+@media (max-width: 576px) {
+    .map-container {
+        width: 94%;
+    }
+
+    .map-container iframe {
+        min-height: 300px;
     }
 }

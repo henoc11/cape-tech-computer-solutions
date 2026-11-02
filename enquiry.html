@@ -1,309 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Make an enquiry about Cape Tech Computer Solutions IT services.">
+          content="Make an enquiry about computer repairs and IT services in Cape Town with Cape Tech Computer Solutions.">
+    <meta name="keywords"
+          content="computer repairs Cape Town, IT services, laptop sales, software installation, network setup, cybersecurity support, IT consulting">
 
     <title>Cape Tech Computer Solutions | Enquiry</title>
 
     <link rel="stylesheet" href="css/style.css">
-
+    <script src="js/script.js" defer></script>
 </head>
 
-
 <body>
-
-
     <header class="site-header">
-
-        <nav class="site-nav">
-
+        <nav class="site-nav" aria-label="Main navigation">
             <a href="index.html" class="logo">
-
-                <img src="images/logo.png"
-                     alt="Cape Tech Computer Solutions logo">
-
+                <img src="images/logo.png" alt="Cape Tech Computer Solutions logo">
                 <div>
                     <span class="logo-title">Cape Tech</span>
-                    <span class="logo-subtitle">
-                        Computer Solutions
-                    </span>
+                    <span class="logo-subtitle">Computer Solutions</span>
                 </div>
-
             </a>
 
+            <!-- Accessible burger menu button -->
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+                ☰
+            </button>
 
-            <ul class="nav-list">
-
+            <ul class="nav-list" id="primary-navigation">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li>
-                    <a href="index.html"
-                       class="nav-link">
-                        Home
-                    </a>
+                    <a href="enquiry.html" class="nav-link active" aria-current="page">Enquiry</a>
                 </li>
-
-                <li>
-                    <a href="about.html"
-                       class="nav-link">
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a href="services.html"
-                       class="nav-link">
-                        Services
-                    </a>
-                </li>
-
-                <li>
-                    <a href="enquiry.html"
-                       class="nav-link active"
-                       aria-current="page">
-                        Enquiry
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html"
-                       class="nav-link">
-                        Contact
-                    </a>
-                </li>
-
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-
         </nav>
-
     </header>
 
-
-
     <main>
-
-
         <section class="page-hero">
-
             <div class="page-hero-content">
-
-                <p class="eyebrow">
-                    Get Started
-                </p>
-
-                <h1>
-                    Make an Enquiry
-                </h1>
-
-                <p>
-                    Tell us what you need help with
-                    and we will review your request.
-                </p>
-
+                <p class="eyebrow">Get Started</p>
+                <h1>Make an Enquiry</h1>
+                <p>Tell us what you need help with and we will review your request.</p>
             </div>
-
         </section>
 
-
-
         <section class="section">
-
             <div class="form-layout">
-
-
                 <div>
-
-                    <p class="eyebrow">
-                        Your Request
-                    </p>
-
-                    <h2>
-                        How Can We Help?
-                    </h2>
-
+                    <p class="eyebrow">Your Request</p>
+                    <h2>How Can We Help?</h2>
                     <p class="form-intro">
-
-                        Complete the form with your details
-                        and select the service you are
-                        interested in.
-
+                        Complete the form with your details and select the service you are interested in.
                     </p>
-
-
                     <div class="form-note">
-
                         <strong>Important:</strong>
-
-                        Please provide accurate contact
-                        information so that we can respond
-                        to your enquiry.
-
+                        Please provide accurate contact information so that we can respond to your enquiry.
                     </div>
-
                 </div>
 
-
-
                 <form class="enquiry-form"
+                      id="enquiry-form"
                       action="#"
-                      method="post">
-
-
+                      method="post"
+                      novalidate>
                     <div class="form-group">
-
-                        <label for="name">
-                            Full Name
-                        </label>
-
+                        <label for="name">Full Name</label>
                         <input type="text"
                                id="name"
                                name="name"
                                placeholder="Enter your full name"
                                required
-                               autocomplete="name">
-
+                               autocomplete="name"
+                               aria-describedby="name-error">
+                        <small class="field-error" id="name-error" aria-live="polite"></small>
                     </div>
 
-
-
                     <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
+                        <label for="email">Email Address</label>
                         <input type="email"
                                id="email"
                                name="email"
                                placeholder="Enter your email"
                                required
-                               autocomplete="email">
-
+                               autocomplete="email"
+                               aria-describedby="email-error">
+                        <small class="field-error" id="email-error" aria-live="polite"></small>
                     </div>
 
-
-
                     <div class="form-group">
-
-                        <label for="phone">
-                            Phone Number
-                        </label>
-
+                        <label for="phone">Phone Number</label>
                         <input type="tel"
                                id="phone"
                                name="phone"
-                               placeholder="Enter your phone number"
-                               autocomplete="tel">
-
+                               placeholder="Enter your 10-digit South African phone number"
+                               required
+                               autocomplete="tel"
+                               inputmode="numeric"
+                               aria-describedby="phone-error">
+                        <small class="field-error" id="phone-error" aria-live="polite"></small>
                     </div>
 
-
-
                     <div class="form-group">
-
-                        <label for="service">
-                            Service Required
-                        </label>
-
+                        <label for="service">Service Required</label>
                         <select id="service"
                                 name="service"
-                                required>
-
-                            <option value="">
-                                Select a service
-                            </option>
-
-                            <option value="computer-repairs">
-                                Computer Repairs
-                            </option>
-
-                            <option value="laptop-sales">
-                                Laptop Sales
-                            </option>
-
-                            <option value="software">
-                                Software Installation
-                            </option>
-
-                            <option value="network">
-                                Network Setup
-                            </option>
-
-                            <option value="cybersecurity">
-                                Cybersecurity Support
-                            </option>
-
-                            <option value="consulting">
-                                IT Consulting
-                            </option>
-
+                                required
+                                aria-describedby="service-error">
+                            <option value="">Select a service</option>
+                            <option value="computer-repairs">Computer Repairs</option>
+                            <option value="laptop-sales">Laptop Sales</option>
+                            <option value="software">Software Installation</option>
+                            <option value="network">Network Setup</option>
+                            <option value="cybersecurity">Cybersecurity Support</option>
+                            <option value="consulting">IT Consulting</option>
                         </select>
-
+                        <small class="field-error" id="service-error" aria-live="polite"></small>
                     </div>
 
-
-
                     <div class="form-group">
-
-                        <label for="message">
-                            Message
-                        </label>
-
+                        <label for="message">Message</label>
                         <textarea id="message"
                                   name="message"
                                   rows="6"
                                   placeholder="Describe what you need help with"
-                                  required></textarea>
-
+                                  required
+                                  aria-describedby="message-error"></textarea>
+                        <small class="field-error" id="message-error" aria-live="polite"></small>
                     </div>
 
-
-
-                    <button type="submit"
-                            class="button button-primary">
-
-                        Send Enquiry
-
-                    </button>
-
-
+                    <button type="submit" class="button button-primary">Send Enquiry</button>
+                    <p id="form-status" role="status" aria-live="polite"></p>
+                    <p class="form-note">
+                        This form performs browser-side validation only. It does not send or store your enquiry.
+                    </p>
                 </form>
-
             </div>
-
         </section>
-
-
     </main>
 
-
-
     <footer class="site-footer">
-
         <div class="footer-content">
-
-            <p>
-                &copy; 2026 Cape Tech Computer Solutions.
-                All rights reserved.
-            </p>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
+            <p>&copy; 2026 Cape Tech Computer Solutions. All rights reserved.</p>
+            <a href="contact.html">Contact Us</a>
         </div>
-
     </footer>
-
-
-    <script src="js/script.js"></script>
-
 </body>
-
 </html>

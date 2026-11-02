@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://henoc11.github.io/cape-tech-computer-solutions/sitemap.xml
